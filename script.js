@@ -30,7 +30,9 @@
 
     video.oncanplaythrough = function() {
         print('oncanplaythrough');
-        video.play();
+        video.play().then(function() {
+            print('play success');
+        }).catch(function(e) { print(e.code + ' ' + e.message) });
     }
 
     video.ontimeupdate = function() {
