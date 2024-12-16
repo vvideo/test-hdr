@@ -14,45 +14,7 @@
 
     </div>
 
-<script>
-    function print(text) {
-        document.querySelector('#console').innerHTML += text + '<br/>';
-    }
+    <script src="script.js"></script>
 
-    var video = document.querySelector('video');
-    video.onerror = function() {
-        var error = document.querySelector('#error');
-        error.innerText = video.error.code + ' ' +  video.error.message;
-    };
-
-    video.onerror = function() {
-        var error = document.querySelector('#error');
-        error.innerText = video.error.code + ' ' +  video.error.message;
-    };
-
-    video.onplaying = function() {
-        print('onplaying');
-    }
-
-    video.oncanplay = function() {
-        print('oncanplay');
-    }
-
-    video.oncanplaythrough = function() {
-        print('oncanplaythrough');
-    }
-
-    video.ontimeupdate = function() {
-        print('ontimeupdate: ' + video.currentTime);
-    }
-
-    video.onended = function() {
-        print('onended');
-    }
-
-    video.onsuspend = function() {
-        print('onsuspend');
-    }
-</script>
     </body>
 </html>
