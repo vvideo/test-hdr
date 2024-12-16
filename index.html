@@ -1,0 +1,58 @@
+<html>
+    <body>
+    <video
+            muted
+            autoplay
+            loop
+            playsinline
+            src="data:video/webm;base64,GkXfo59ChoEBQveBAULygQRC84EIQoKEd2VibUKHgQJChYECGFOAZwEAAAAAAAJUEU2bdLpNu4tTq4QVSalmU6yBoU27i1OrhBZUrmtTrIHWTbuMU6uEElTDZ1OsggErTbuMU6uEHFO7a1OsggI+7AEAAAAAAABZAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAVSalmsCrXsYMPQkBNgIxMYXZmNjAuMy4xMDBXQYxMYXZmNjAuMy4xMDBEiYhAj0AAAAAAABZUrmvQrgEAAAAAAABH14EBc8WIFnt2oIDBzYucgQAitZyDdW5kiIEAhoVWX1ZQOYOBASPjg4Q7msoA4JiwgfC6gfCagQJVsIxVuoEQVbGBCVW7gQkSVMNnQNtzc59jwIBnyJlFo4dFTkNPREVSRIeMTGF2ZjYwLjMuMTAwc3NAtWPAi2PFiBZ7dqCAwc2LZ8jYRaOOTUFTVEVSLURJU1BMQVlEh8RHKDg1MDAsMzk4NTApQig2NTUwLDIzMDApUigzNTQwMCwxNDYwMClXUCgxNTYzNSwxNjQ1MClMKDUwMDAwMDAwLDEwKWfIpEWjh0VOQ09ERVJEh5dMYXZjNjAuMy4xMDAgbGlidnB4LXZwOWfIokWjiERVUkFUSU9ORIeUMDA6MDA6MDEuMDAwMDAwMDAwAAAfQ7Z1reeBAKOogQAAgIJJg0KgDvAO9gA4JBwYSgAAUGH2MAAAZxoBYTu4tFjCdRv0ABxTu2uRu4+zgQC3iveBAfGCAgzwgQM="
+    >
+    </video>
+
+    <div id="error" style="color:red"></div>
+    <div id="console">
+
+    </div>
+
+<script>
+    function print(text) {
+        document.querySelector('#console').innerHTML += text + '<br/>';
+    }
+
+    var video = document.querySelector('video');
+    video.onerror = function() {
+        var error = document.querySelector('#error');
+        error.innerText = video.error.code + ' ' +  video.error.message;
+    };
+
+    video.onerror = function() {
+        var error = document.querySelector('#error');
+        error.innerText = video.error.code + ' ' +  video.error.message;
+    };
+
+    video.onplaying = function() {
+        print('onplaying');
+    }
+
+    video.oncanplay = function() {
+        print('oncanplay');
+    }
+
+    video.oncanplaythrough = function() {
+        print('oncanplaythrough');
+    }
+
+    video.ontimeupdate = function() {
+        print('ontimeupdate: ' + video.currentTime);
+    }
+
+    video.onended = function() {
+        print('onended');
+    }
+
+    video.onsuspend = function() {
+        print('onsuspend');
+    }
+</script>
+    </body>
+</html>
